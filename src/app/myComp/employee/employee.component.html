@@ -1,0 +1,21 @@
+<div>
+  <table>
+    <thead>
+      <th>SR.NO</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Salary</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of empComp" (click)="deleteRow(employee.srno)">
+        <td>{{ employee.srno }}</td>
+        <td>{{ employee.name | titlecase }}</td>
+        <td>{{ employee.position}}</td>
+        <td>{{ employee.salary | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+
+
+</div>

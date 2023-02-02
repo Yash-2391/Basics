@@ -1,0 +1,12 @@
+<!--ng content is  used to display the content from the parent and select is used to seldct which selector you wnat to chooose-->
+<ng-content select="#heading"></ng-content>
+<img [src]="postImgURL" alt="Y&KJ" (click)="imgSelected.emit(postImgURL)">
+<ng-content select="#para"></ng-content>
+
+<div>
+  <ul *ngFor="let item of a">
+    <!-- currency pipe it does not changes the value of th array -->
+    <!-- we can also convert it to different currency formats by using currency codes eg: {{ item | currency: 'JPY'}} this formats value to japanese YEN. NOTE: it just changes the template not value it would stil be 1 YEN -->
+    <li (click)="itemSelected.emit(a.indexOf(item))" >{{ item | currency }}</li>
+  </ul>
+</div>
